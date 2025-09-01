@@ -20,6 +20,7 @@ jobs:
         run: cargo test --verbose
 
   build:
+    needs: check
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
