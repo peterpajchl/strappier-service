@@ -50,5 +50,5 @@ jobs:
           username: ${{ secrets.OVH_VPS_PROD_USER }}
           key: ${{ secrets.OVH_VPS_PROD_DEPLOY_SSH_KEY }}
           port: ${{ secrets.OVH_VPS_PROD_PORT }}
-          source: "strappier_service"
-          target: "/home/deployer/strappier-service/"
+          source: "strappier-service"
+          target: "/home/deployer/strappier-service/bin/"
