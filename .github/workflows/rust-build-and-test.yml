@@ -18,6 +18,11 @@ jobs:
         run: cargo build --verbose
       - name: Run tests
         run: cargo test --verbose
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: strappier-service
+          path: target/release/strappier-service
 
   deploy:
     needs: build
