@@ -43,6 +43,8 @@ jobs:
         with:
           name: strappier-service
           path: .
+      - name: Make executable
+        run: chmod +x strappier-service
       - name: Copy binary to VPS
         uses: appleboy/scp-action@v1.0.0
         with:
