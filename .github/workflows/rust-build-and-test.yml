@@ -46,7 +46,7 @@ jobs:
       - name: Make executable
         run: chmod +x strappier-service
       - name: Copy binary to VPS
-        uses: appleboy/scp-action@v1.0.0
+        uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.OVH_VPS_PROD_HOST }}
           username: ${{ secrets.OVH_VPS_PROD_USER }}
