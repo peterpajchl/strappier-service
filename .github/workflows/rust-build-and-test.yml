@@ -54,3 +54,6 @@ jobs:
           port: ${{ secrets.OVH_VPS_PROD_PORT }}
           source: "strappier-service"
           target: "/home/deployer/strappier-service/bin/"
+          script: |
+            # Restart the service using systemctl
+            sudo systemctl restart strappier-service
