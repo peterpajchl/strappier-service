@@ -54,6 +54,13 @@ jobs:
           port: ${{ secrets.OVH_VPS_PROD_PORT }}
           source: "strappier-service"
           target: "/home/deployer/strappier-service/bin/"
+      - name: Restart systemd service
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.OVH_VPS_PROD_HOST }}
+          username: ${{ secrets.OVH_VPS_PROD_USER }}
+          key: ${{ secrets.OVH_VPS_PROD_DEPLOY_SSH_KEY }}
+          port: ${{ secrets.OVH_VPS_PROD_PORT }}
           script: |
             # Restart the service using systemctl
             sudo systemctl restart strappier-service
